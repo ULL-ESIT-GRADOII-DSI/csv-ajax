@@ -1,26 +1,11 @@
 ﻿
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     
      <h1>CSV Analyzer</h1>
-     <link href="global.css" rel="stylesheet" type="text/css">
+     
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     
      <script type="text/javascript" src="csv.js"></script>
-	 <script type="text/html" id="tableTemplate"> 
-	<p>
-		<table class="center" id="result">
-            <% _.each(rows, function(row) { %>
-                <tr class="<%=row.type%>">
-                    <% _.each(row.items, function(name) { %>
-                    <td><%= name %></td>
-                    <% }); %>
-                </tr>
-            <% }); %>
-		</table>
-	</p>
- 
-	</script>
-
+	
     <h1>Comma Separated Value Analyzer</h1>
     <div>
       <i>Write a CSV string. Click the table button. The program outputs a table with the specified data.</i>
