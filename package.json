@@ -19,6 +19,12 @@
     "url": "https://github.com/alu0100764666/PL_practica2/issues"
   },
   "homepage": "https://github.com/alu0100764666/PL_practica2",
+  "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
   "devDependencies": {
     "chai": "~2.0.0",
     "del": "^1.1.1",
