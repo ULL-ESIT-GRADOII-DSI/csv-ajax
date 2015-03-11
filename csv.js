@@ -9,17 +9,15 @@ $(document).ready(function() {
 
 function calculate() {
   var result;
-  var original       = document.getElementById("original");
+  var original = document.getElementById("original");
   var temp = original.value;
   var regexp = /\s*"((?:[^"\\]|\\.)*)"\s*,?|\s*([^,]+),?|\s*,/g;
   var lines = temp.split(/\n+\s*/);
   var commonLength = NaN;
-  var r = [];
   // Template using underscore
-  var row = "<% _.each(items, function(name) { %>"     +
-            "                    <td><%= name %></td>" +
-            "              <% }); %>";
-
+  var tableTemplate = document.getElementById("tableTemplate").innerHTML;
+  var row;
+  var rows = [];
   if (window.localStorage) localStorage.original  = temp;
   
   for(var t in lines) {
@@ -44,18 +42,18 @@ function calculate() {
         var removeescapedquotes = removelastquote.replace(/\\"/,'"');
         result.push(removeescapedquotes);
       }
-      var tr = error? '<tr class="error">' : '<tr>';
-      r.push(tr+_.template(row, {items : result})+"</tr>");
+      var tr = error ? 'error' : '';
+      row = new Object();
+      row.type = tr;
+      row.items = result;
+      rows.push(row);
     }
     else {
-      alert('ERROR! row '+temp+' does not look as legal CSV');
+      alert('ERROR! row '+temp +' does not look as legal CSV');
       error = true;
     }
   }
-  r.unshift('<p>\n<table class="center" id="result">');
-  r.push('</table>');
-  //alert(r.join('\n')); // debug
-  finaltable.innerHTML = r.join('\n');
+  finaltable.innerHTML = _.template(tableTemplate, { rows: rows });
 }
 
 window.onload = function() {
