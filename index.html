@@ -1,4 +1,4 @@
-<html>
+﻿<html>
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <title>CSV Analyzer</title>
@@ -10,12 +10,25 @@
      <script type="text/html" id="tableTemplate"> 
 	<p>
 		<table class="center" id="result">
-			<tr><td><%=name%></td></tr>
+            <% _.each(rows, function(row) { %>
+                <tr class="<%=row.type%>">
+                    <% _.each(row.items, function(name) { %>
+                    <td><%= name %></td>
+                    <% }); %>
+                </tr>
+            <% }); %>
 		</table>
 	</p>
 
 	</script>
-  </head>
+      <script type="text/html" id="rowTemplate">
+          <tr class="<%=row.type%>">
+              <% _.each(row.items, function(name) { %>
+              <td><%= name %></td>
+              <% }); %>
+          </tr>
+      </script>
+</head>
   <body>
     <h1>Comma Separated Value Analyzer</h1>
     <div>
