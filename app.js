@@ -12,7 +12,7 @@ app.use(expressLayouts);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (request, response) {
-    response.send('Hello World!');
+  //  response.send('Hello World!');
     response.render('index');
 });
 
