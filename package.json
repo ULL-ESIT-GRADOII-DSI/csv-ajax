@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/alu0100764666/PL_practica2",
   "dependencies": {
+	"jquery": "*",
     "underscore": "*",
 	"express": "*",
     "ejs": "*",
