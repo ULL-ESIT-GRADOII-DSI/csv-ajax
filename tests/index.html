@@ -21,8 +21,10 @@
 	</p>
 
 	</script>
+
 </head>
   <body>
+<div id="mocha"></div>
     <h1>Comma Separated Value Analyzer</h1>
     <div>
       <i>Write a CSV string. Click the table button. The program outputs a table with the specified data.</i>
@@ -37,9 +39,9 @@
     <span class="output" id="finaltable"></span>
      <script src="chai.js"></script>
     <script src="mocha.js"></script>
-  <!--   <script src="blanket.js"
-          data-cover-adapter="mocha-blanket.js"></script>-->
-    <script src="../csv.js"></script>
+     <script src="blanket.js"
+          data-cover-adapter="mocha-blanket.js"></script>
+    <script src="../csv.js" data-cover></script>
     <script>mocha.setup('tdd')</script>
     <script src="test.js"></script>
     <script>

@@ -4,26 +4,27 @@ var assert = chai.assert;
 
 suite('csv', function() {
 	if (typeof __html__ !== 'undefined') {
-              document.body.innerHTML = __html__['tests/test.html'];
+              document.body.innerHTML = __html__['tests/index.html'];
               original = document.getElementById('original');
-              output = document.getElementByClassName('legal').children;
+	      finaltable = document.getElementById('finaltable');
+
           }   
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
 		calculate();
-		assert.deepEqual(output[0].childNodes[0], "2");
+		assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[0].childNodes[0].data, "2");
 	});
 	
 	test('2, 4, "hola"', function() {
-	original.value = '2, 4, "hola"';
+		original.value = '2, 4, "hola"';
 		calculate();
-		assert.deepEqual(output[1].childNodes[0], "4");
+		 assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[1].childNodes[0].data, " 4");
 	});
 
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
 		calculate();
-		assert.deepEqual(output[2].childNodes[0], '"hola"');
+		 assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[2].childNodes[0].data, "hola");
 	});
 	
 	
