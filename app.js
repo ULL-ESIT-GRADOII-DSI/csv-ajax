@@ -12,9 +12,8 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (request, response) {
-      response.render('/index.html');
-    //response.render('index', { title: 'CSV Analyzer' });
+app.get('/', function (request, response) {     
+    response.render('index', { title: 'CSV Analyzer' });
 });
 
 app.listen(app.get('port'), function () {

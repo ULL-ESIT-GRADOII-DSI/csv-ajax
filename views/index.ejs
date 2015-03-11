@@ -1,20 +1,7 @@
 ﻿   
      <h1>CSV Analyzer</h1>
     <h1>Comma Separated Value Analyzer</h1>
-	<script type="text/html" id="tableTemplate"> 
-	<p>
-		<table class="center" id="result">
-            <% _.each(rows, function(row) { %>
-                <tr class="<%=row.type%>">
-                    <% _.each(row.items, function(name) { %>
-                    <td><%= name %></td>
-                    <% }); %>
-                </tr>
-            <% }); %>
-		</table>
-	</p>
- 
-	</script>
+	
     <div>
       <i>Write a CSV string. Click the table button. The program outputs a table with the specified data.</i>
     </div>
