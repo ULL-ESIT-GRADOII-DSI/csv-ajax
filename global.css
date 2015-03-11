@@ -11,9 +11,8 @@ th, td        { vertical-align: top; text-align: right; }
 
 /* #finaltable table { border-collapse:collapse; } */
 /* #finaltable table, td { border:1px solid white; } */
-/*#finaltable:hover tr{ background-color: blue; } */
-tr:nth-child(odd):hover { background-color: blue; } 
-tr:nth-child(even):hover { background-color: blue; } 
+
+#finaltable tr:hover{ background-color: blue; } 
 tr:nth-child(odd)   { background-color:#eee; }
 tr:nth-child(even)    { background-color:#00FF66; }
 input        { text-align: right;  border: none;       }     /* Align input to the right  */

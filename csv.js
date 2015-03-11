@@ -42,7 +42,7 @@ function calculate() {
         var removeescapedquotes = removelastquote.replace(/\\"/,'"');
         result.push(removeescapedquotes);
       }
-      var tr = error ? 'error' : '';
+      var tr = error ? 'error' : 'legal';
       row = new Object();
       row.type = tr;
       row.items = result;
