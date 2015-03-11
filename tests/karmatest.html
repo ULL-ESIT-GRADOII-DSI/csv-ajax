@@ -1,0 +1,50 @@
+﻿<html>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>CSV Analyzer</title>
+     <link href="global.css" rel="stylesheet" type="text/css">
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script type="text/javascript" src="csv.js"></script>
+     <script type="text/html" id="tableTemplate"> 
+	<p>
+		<table class="center" id="result">
+            <% _.each(rows, function(row) { %>
+                <tr class="<%=row.type%>">
+                    <% _.each(row.items, function(name) { %>
+                    <td><%= name %></td>
+                    <% }); %>
+                </tr>
+            <% }); %>
+		</table>
+	</p>
+
+	</script>
+
+</head>
+  <body>
+<div id="mocha"></div>
+    <h1>Comma Separated Value Analyzer</h1>
+    <div>
+      <i>Write a CSV string. Click the table button. The program outputs a table with the specified data.</i>
+    </div>
+    <table>
+      <tr>
+        <th>CSV string:</th> <!-- autofocus attribute is HTML5 -->
+        <td><textarea autofocus cols = "80" rows = "5" id="original"></textarea></td> 
+      </tr>
+    </table>
+    <button type="button">table:</button><br>
+    <span class="output" id="finaltable"></span>
+     <script src="chai.js"></script>
+    <script src="mocha.js"></script>
+   
+    <script src="../csv.js"></script>
+    <script>mocha.setup('tdd')</script>
+    <script src="test.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
