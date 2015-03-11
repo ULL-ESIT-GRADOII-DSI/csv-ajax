@@ -4,7 +4,7 @@
   "description": "Analizador de cadenas csv",
   "main": "csv.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start --single-run"
+    "test": "firefox tests/index.html"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "karma-chrome-launcher": "^0.1.7",
     "karma-firefox-launcher": "^0.1.4",
     "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jquery": "^0.1.0",
     "karma-mocha": "~0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "~2.1.0"
