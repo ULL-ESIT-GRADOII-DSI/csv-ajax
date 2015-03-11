@@ -1,0 +1,26 @@
+{
+  "name": "PL_practica2",
+  "version": "1.0.0",
+  "description": "Analizador de cadenas csv",
+  "main": "csv.js",
+  "scripts": {
+    "test": "firefox index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alu0100764666/PL_practica2.git"
+  },
+  "keywords": [
+    "csv"
+  ],
+  "author": "Sabato Ceruso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100764666/PL_practica2/issues"
+  },
+  "homepage": "https://github.com/alu0100764666/PL_practica2",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1"
+  }
+}
