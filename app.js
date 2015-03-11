@@ -13,7 +13,7 @@ app.use(expressLayouts);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (request, response) {
-      response.send('/index.html');
+      response.render('/index.html');
     //response.render('index', { title: 'CSV Analyzer' });
 });
 
