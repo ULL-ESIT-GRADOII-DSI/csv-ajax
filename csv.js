@@ -3,7 +3,10 @@
 
 $(document).ready(function() {
    $("button").click(function() {
-     calculate();
+       // calculate();
+       $.get("/separateCSV", { nombre: "JUAN" }, function (data) {
+           alert(data["answer"]);
+       }, 'json');
    });
  });
 
