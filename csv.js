@@ -7,7 +7,8 @@ $(document).ready(function() {
         // calculate();
         console.log(document.getElementById("original").value);
         $.get("/separateCSV", { input: document.getElementById("original").value }, function (data) {
-           var tableTemplate = document.getElementById("tableTemplate").innerHTML;
+            var tableTemplate = document.getElementById("tableTemplate").innerHTML;
+            $("#finaltable").html(_.template(tableTemplate, { rows: data.rows }));
            console.log(_.template(tableTemplate, { rows: data.rows }));
            alert(data["rows"]);
        }, 'json');
