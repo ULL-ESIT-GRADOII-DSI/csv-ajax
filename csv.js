@@ -6,7 +6,7 @@ $(document).ready(function() {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
        // calculate();
        $.get("/separateCSV", { original: document.getElementById("original") }, function (data) {
-           alert(data[0].type);
+           alert("Finished");
        }, 'json');
    });
  });
