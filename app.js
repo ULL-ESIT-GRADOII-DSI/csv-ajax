@@ -18,8 +18,6 @@ app.get('/', function (request, response) {
 });
 
 app.get('/separateCSV', function (request, response) {
-    
-   
 
     var result;
     var original = request.query.input
