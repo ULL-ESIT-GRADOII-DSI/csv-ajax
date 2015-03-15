@@ -2,7 +2,7 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 $(document).ready(function() {
-   $("#tableButton").click(function() {
+   $("button").click(function() {
        // calculate();
        $.get("/separateCSV", { nombre: "JUAN" }, function (data) {
            alert(data.answer);
