@@ -8,7 +8,7 @@ $(document).ready(function() {
         console.log(document.getElementById("original").value);
         $.get("/separateCSV", { input: document.getElementById("original").value }, function (data) {
             console.log(data);
-           alert(data["answer"]);
+           alert(data["rows"]);
        }, 'json');
    });
  });
