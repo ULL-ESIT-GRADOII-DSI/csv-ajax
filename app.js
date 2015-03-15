@@ -20,7 +20,6 @@ app.get('/', function (request, response) {
 app.get('/separateCSV', function (request, response) {
        
     console.log("starting");
-    console.log(request);
     
 });
 
