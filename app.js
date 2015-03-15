@@ -20,11 +20,11 @@ app.get('/', function (request, response) {
 app.get('/separateCSV', function (request, response) {
        
     console.log("starting");
-    console.log(request.original.value);
+    console.log(request.original);
 
         var result;
         var original = request.original;
-        var temp = original.value;
+        var temp = original;
         var regexp = /\s*"((?:[^"\\]|\\.)*)"\s*,?|\s*([^,]+),?|\s*,/g;
         var lines = temp.split(/\n+\s*/);
         var commonLength = NaN; 
