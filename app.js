@@ -18,6 +18,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/separateCSV', function (request, response) {
+    console.log(request.input);
     response.send({"answer":"Server response"});
 });
 
