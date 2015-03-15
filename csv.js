@@ -4,7 +4,8 @@
 $(document).ready(function() {
     $("button").click(function () {
        // if (window.localStorage) localStorage.original = document.getElementById("original").value;
-       // calculate();
+        // calculate();
+        console.log(document.getElementById("original").value);
         $.get("/separateCSV", { input: document.getElementById("original").value }, function (data) {
            alert(data.answer);
        }, 'json');
