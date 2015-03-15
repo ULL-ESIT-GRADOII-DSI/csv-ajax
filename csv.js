@@ -2,10 +2,11 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 $(document).ready(function() {
-   $("button").click(function() {
+    $("button").click(function () {
+        if (window.localStorage) localStorage.original = document.getElementById("original").value;
        // calculate();
-       $.get("/separateCSV", { nombre: "JUAN" }, function (data) {
-           alert(data.answer);
+       $.get("/separateCSV", { original: document.getElementById("original") }, function (data) {
+           alert(data[0].type);
        }, 'json');
    });
  });
