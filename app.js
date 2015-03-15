@@ -18,9 +18,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/separateCSV', function (request, response) {
-       
-    //console.log("starting");
-    
+    response.send({"answer":"Server response"});
 });
 
 app.listen(app.get('port'), function () {
