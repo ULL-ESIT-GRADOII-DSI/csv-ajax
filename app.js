@@ -18,8 +18,8 @@ app.get('/', function (request, response) {
 });
 
 app.get('/separateCSV', function (request, response) {
-    console.log(request.input);
-    response.send({"answer":"Server response"});
+    
+    response.send({"answer":request.input});
 });
 
 app.listen(app.get('port'), function () {
