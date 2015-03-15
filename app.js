@@ -19,7 +19,9 @@ app.get('/', function (request, response) {
 
 app.get('/separateCSV', function (request, response) {
        
-   
+    console.log("starting");
+    console.log(request.original.value);
+
         var result;
         var original = request.original;
         var temp = original.value;
