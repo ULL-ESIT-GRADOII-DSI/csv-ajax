@@ -21,9 +21,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'bower_components/jquery/dist/*.js',
-        'bower_components/underscore/*.js',
-         'bower_components/require/build/*.js',
+        'htpp://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js',
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
         'tests/karmatest.html',
         '*.js',
         'tests/*.js'
