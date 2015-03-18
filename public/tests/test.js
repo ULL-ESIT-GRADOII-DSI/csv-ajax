@@ -11,20 +11,21 @@ suite('csv', function() {
           }   
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
-		calculate();
-		assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[0].childNodes[0].data, "2");
+		$("#tableButton").trigger("click")
+		setTimeout(function () { assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[0].childNodes[0].data, "2"); }, 10000);
+		
 	});
 	
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
-		calculate();
-		 assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[1].childNodes[0].data, " 4");
+		$("#tableButton").trigger("click")
+		setTimeout(function () { assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[1].childNodes[0].data, " 4"); }, 10000);
 	});
 
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
-		calculate();
-		 assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[2].childNodes[0].data, "hola");
+		$("#tableButton").trigger("click")
+		setTimeout(function () { assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[2].childNodes[0].data, "hola"); }, 10000);
 	});
 	
 	
