@@ -1,27 +1,90 @@
-html *
-{
-   font-size: large; 
-   /* The !important ensures that nothing can override what you've set in this style (unless it is also important). */
-   font-family: Arial;
+body{
+
+  margin-left:10%;
+  margin-right:10%;
+  margin-top:30px;
+  margin-bottom:20px;
+
+  background-image:url(./imagenes/fondo-de-madera-2831.jpg);
+  
+  background-attachment:fixed;
+  background-repeat:repeat;
+
+  }
+
+.menu dl{
+  float:left;
+  margin-top:40;
+
+  width:185;
+  height:auto;
+  padding:5px;
+  overflow:auto;
+  line-height:20px;
+
+  border-color:black;
+  border-style:solid;
+  background:#424242;
+
+
+  font-family:Airal;
+  font-size:14;
+  font-weight:bold;
+
 }
+.contenido_total{
+  margin-left:220;
+}
+.contenido{
+  margin-top:20px;
+}
+.enlaces{
+  margin-top: 30px;
+  float:right;
+}
+.enlace_tests{
+  display: inline-block;
+}
+.enlace_travis{
+  display: inline-block;
+}
+.enlace_github{
+  display:inline-block;
+}
+.enlace_jquery{
+  display:inline-block;
+}
+.descripcion fieldset{
+  border-color:black; 
+  margin-top:50px;
+  width:250px;
+}
+.descripcion p{
+  display: inline-block;
+  float: left;
+  text-align:justify;
+  color:white;
+}
+.boton_tabla{
+  text-align: left;
+  margin-top:20px;
+  margin-bottom:30px;
+}
+table.center {
+	font-weight: bold;
+	color:white;
+	text-align: center;
 
-h1            { text-align: center; font-size: x-large; }
-th, td        { vertical-align: top; text-align: right; }   
-/* #finaltable  * { color: white; background-color: black; }   */
-
-/* #finaltable table { border-collapse:collapse; } */
-/* #finaltable table, td { border:1px solid white; } */
-
-#finaltable tr:hover{ background-color: blue; } 
-tr:nth-child(odd)   { background-color:#eee; }
-tr:nth-child(even)    { background-color:#00FF66; }
-input        { text-align: right;  border: none;       }     /* Align input to the right  */
-textarea     { border: outset; border-color: white;       }                        
-table        { border: inset; border-color: white; }
-table.center { margin-left:auto; margin-right:auto; }
-#result      { border-color: red; }
-tr.error       { background-color: red; }
-body
-{
- background-color:#b0c4de;  /* blue */
+	margin-left: 90px;
+	
+	border: ridge;
+	border-color: #0B610B;
+	
+	background-color: #A4A4A4;	
+}
+.center td{
+	background-color: #424242;
+}
+.error td{ 
+	background-color: #B40404; 
 }
