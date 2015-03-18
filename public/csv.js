@@ -10,11 +10,8 @@ $(document).ready(function () {
     });
     $("#tableButton").click(function () {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
-     //   console.log(document.getElementById("original").value);
         $.get("/separateCSV", { input: document.getElementById("original").value }, function (data) {           
-       //     console.log(template);
             $("#finaltable").html(_.template(template, { rows: data.rows }));
-         //  console.log(_.template(template, { rows: data.rows }));          
        }, 'json');
    });
  });
