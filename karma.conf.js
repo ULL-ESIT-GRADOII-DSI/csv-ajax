@@ -24,9 +24,11 @@ module.exports = function(config) {
         'htpp://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js',
         'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
-        'tests/karmatest.html',
+        'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js',
+        'public/tests/karmatest.html',
+        'https://analizador-csv.herokuapp.com/',
         '*.js',
-        'tests/*.js'
+        'public/tests/*.js'
     ],
 
 
