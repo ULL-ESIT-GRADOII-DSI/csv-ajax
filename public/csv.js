@@ -1,14 +1,14 @@
 // See http://en.wikipedia.org/wiki/Comma-separated_values
+(function() {
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-
 $(document).ready(function () {
-    var scr = document.getElementById("tableTemplate").src;
     if (window.localStorage && localStorage.original) {
       document.getElementById("original").value = localStorage.original;
     }
+    var templateURL = document.getElementById("tableTemplate").src; // "http://.../tabletemplate.html"
     var template;
-    $.get(scr, template, function (t) {
+    $.get(templateURL, template, function (t) {
         template = t;
     });
     $("#tableButton").click(function () {
@@ -21,4 +21,4 @@ $(document).ready(function () {
          'json');
    });
  });
-
+})();
