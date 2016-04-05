@@ -1,9 +1,9 @@
 "use strict";
 
-let express = require('express');
-let app = express();
-let path = require('path');
-let expressLayouts = require('express-ejs-layouts');
+const express = require('express');
+const app = express();
+const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -13,7 +13,7 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname + '/public'));
 
-let calculate = require('./calculate');
+const calculate = require('./calculate');
 
 app.get('/', (request, response) => {     
   response.render('index', { title: 'CSV Analyzer' });

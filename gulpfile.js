@@ -1,14 +1,14 @@
-var gulp    = require('gulp'),
-    gutil   = require('gulp-util'),
-    uglify  = require('gulp-uglify'),
-    concat  = require('gulp-concat');
-var del     = require('del');
-var Server  = require('karma').Server;
-var minifyHTML = require('gulp-minify-html');
-var cleanCSS = require('gulp-clean-css');
-//var minifyCSS  = require('gulp-minify-css');
+const gulp    = require('gulp'),
+      gutil   = require('gulp-util'),
+      uglify  = require('gulp-uglify'),
+      concat  = require('gulp-concat');
+const del     = require('del');
+const Server  = require('karma').Server;
+const minifyHTML = require('gulp-minify-html');
+const cleanCSS = require('gulp-clean-css');
+//const minifyCSS  = require('gulp-minify-css');
 
-gulp.task('minify', function () {
+gulp.task('minify', () => {
   gulp.src('csv.js')
   .pipe(uglify())
   .pipe(gulp.dest('minified'));
@@ -22,18 +22,18 @@ gulp.task('minify', function () {
     .pipe(gulp.dest('./minified'));
 });
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', (cb) => {
   del(['minified/*'], cb);
 });
 
-gulp.task('test', function (done) {
+gulp.task('test', (done) => {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
   }, done).start();
 });
 
-gulp.task('default', function() {
+gulp.task('default', () => {
   gulp.src([])
     .pipe(karma({
       configFile: 'karma.conf.js',
