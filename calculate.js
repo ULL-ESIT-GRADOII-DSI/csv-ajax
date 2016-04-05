@@ -22,11 +22,11 @@ var calculate = function(original) {
         result = m.map(removeQuotes);
         error = (commonLength != m.length);
         var rowclass = error? 'error' : 'legal';
-        r.push({ items: result, typ: rowclass });
+        r.push({ items: result, type: rowclass });
       }
       else {
         var errmsg = 'La fila "' + temp + '" no es un valor de CSV permitido.';
-        r.push({value: errmsg.split("").splice(commonLength), rowClass: 'error'});
+        r.push({items: errmsg.split("").splice(commonLength), type: 'error'});
       }
     }
     return r;
