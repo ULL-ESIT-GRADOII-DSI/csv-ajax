@@ -11,7 +11,7 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname + '/public'));
 
-var calculate = require('calculate');
+var calculate = require('./calculate');
 
 app.get('/', function (request, response) {     
   response.render('index', { title: 'CSV Analyzer' });
