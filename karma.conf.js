@@ -35,7 +35,8 @@ module.exports = function(config) {
     exclude: [
       'gulpfile.js',
       'app.js',
-      'calculate.js'
+      'calculate.js',
+      'karma.conf.js'
     ],
 
 
@@ -87,6 +88,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };
