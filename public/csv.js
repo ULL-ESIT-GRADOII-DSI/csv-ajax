@@ -15,7 +15,7 @@ $(document).ready(function () {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
         $.get("/csv", 
           { input: document.getElementById("original").value }, 
-          function (data) {           
+          function (data) {
             $("#finaltable").html(_.template(template, { rows: data.rows }));
          }, 
          'json');
