@@ -6,11 +6,25 @@ $(document).ready(function () {
     if (window.localStorage && localStorage.original) {
       document.getElementById("original").value = localStorage.original;
     }
+    const template = `
+      <p>
+          <table class="center" id="result">
+              <% _.each(rows, function(row) { %>
+              <tr class="<%=row.type%>">
+                  <% _.each(row.items, function(name) { %>
+                  <td><%= name %></td>
+                  <% }); %>
+              </tr>
+              <% }); %>
+          </table>
+      </p>
+  `;
+/*
     var templateURL = document.getElementById("tableTemplate").src; // "http://.../tabletemplate.html"
-    var template;
     $.get(templateURL, function (t) {
         template = t;
     });
+*/
     $("#tableButton").click(function () {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
         $.get("/csv", 
