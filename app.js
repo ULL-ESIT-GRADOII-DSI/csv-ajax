@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var expressLayouts = require('express-ejs-layouts');
-var _ = require('underscore');
 
 app.set('port', (process.env.PORT || 5000));
 
