@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha'/* , 'chai' */],
 
     client: {
           mocha: {
@@ -21,7 +21,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'htpp://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js',
+        //'htpp://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js',
         'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js',
@@ -34,7 +34,8 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'gulpfile.js'
+      'gulpfile.js', 
+      'app.js'
     ],
 
 
@@ -65,6 +66,18 @@ module.exports = function(config) {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
+
+    /*
+    plugins: [
+      "karma-chai",
+      "karma-chrome-launcher",
+      "karma-firefox-launcher",
+      "karma-html2js-preprocessor",
+      "karma-jquery",
+      "karma-mocha",
+      "karma-phantomjs-launcher",
+     ],
+    */
 
 
     // start these browsers

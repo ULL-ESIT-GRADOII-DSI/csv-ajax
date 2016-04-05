@@ -57,7 +57,7 @@ app.get('/separateCSV', function (request, response) {
             rows.push(row);
         }
         else {
-            alert('ERROR! row ' + temp + ' does not look as legal CSV');
+            console.log('ERROR! row <' + temp + '> does not look as legal CSV');
             error = true;
         }
     }

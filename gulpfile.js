@@ -3,9 +3,10 @@ var gulp    = require('gulp'),
     uglify  = require('gulp-uglify'),
     concat  = require('gulp-concat');
 var del     = require('del');
-var karma   = require('gulp-karma');
+var Server  = require('karma').Server;
 var minifyHTML = require('gulp-minify-html');
-var minifyCSS  = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
+//var minifyCSS  = require('gulp-minify-css');
 
 gulp.task('minify', function () {
   gulp.src('csv.js')
@@ -17,14 +18,15 @@ gulp.task('minify', function () {
     .pipe(gulp.dest('./minified/'))
 
   gulp.src('./*.css')
-   .pipe(minifyCSS({keepBreaks:true}))
-   .pipe(gulp.dest('./minified/'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./minified'));
 });
 
 gulp.task('clean', function(cb) {
   del(['minified/*'], cb);
 });
 
+/*
 gulp.task('test', function() {
   // Be sure to return the stream
   return gulp.src([])
@@ -36,6 +38,14 @@ gulp.task('test', function() {
       // Make sure failed tests cause gulp to exit non-zero
       throw err;
     });
+});
+*/
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 gulp.task('default', function() {
