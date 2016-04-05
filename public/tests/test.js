@@ -3,19 +3,20 @@ var assert = chai.assert;
 //var original;
 
 suite('csv', function() {
-	if (typeof __html__ !== 'undefined') {
-              document.body.innerHTML = __html__['tests/karmatest.html'];
-              original = document.getElementById('original');
-	          finaltable = document.getElementById('finaltable');
-
-          }   
+  setup(function(){
+    if (typeof __html__ !== 'undefined') {
+        document.body.innerHTML = __html__['tests/karmatest.html'];
+        original = document.getElementById('original');
+        finaltable = document.getElementById('finaltable');
+    }
+  });
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
 		$("#tableButton").trigger("click")
 		setTimeout(function () { assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[0].childNodes[0].data, "2"); }, 10000);
-		
+
 	});
-	
+
 	test('2, 4, "hola"', function() {
 		original.value = '2, 4, "hola"';
 		$("#tableButton").trigger("click")
@@ -27,6 +28,6 @@ suite('csv', function() {
 		$("#tableButton").trigger("click")
 		setTimeout(function () { assert.deepEqual(finaltable.children[0].children[0].children[0].children[0].children[2].childNodes[0].data, "hola"); }, 10000);
 	});
-	
-	
+
+
 });

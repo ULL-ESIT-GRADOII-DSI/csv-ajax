@@ -26,16 +26,16 @@ module.exports = function(config) {
         'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js',
         'public/tests/karmatest.html',
-        'https://analizador-csv.herokuapp.com/',
-        '*.js',
+        //'https://analizador-csv.herokuapp.com/',
         'public/tests/*.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'gulpfile.js', 
-      'app.js'
+      'gulpfile.js',
+      'app.js',
+      'calculate.js'
     ],
 
 

@@ -1,3 +1,4 @@
+(function() {
 var regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g
 var calculate = function(original) {
     var lines = original.split(/\n+\s*/);
@@ -33,3 +34,4 @@ var calculate = function(original) {
   };
 
 module.exports = calculate;
+})();
