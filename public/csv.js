@@ -4,22 +4,21 @@
 
 $(document).ready(function () {
     var scr = document.getElementById("tableTemplate").src;
+    if (window.localStorage && localStorage.original) {
+      document.getElementById("original").value = localStorage.original;
+    }
     var template;
     $.get(scr, template, function (t) {
         template = t;
     });
     $("#tableButton").click(function () {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
-        $.get("/separateCSV", { input: document.getElementById("original").value }, function (data) {           
+        $.get("/separateCSV", 
+          { input: document.getElementById("original").value }, 
+          function (data) {           
             $("#finaltable").html(_.template(template, { rows: data.rows }));
-       }, 'json');
+         }, 
+         'json');
    });
  });
-
-window.onload = function() {
-  // If the browser supports localStorage and we have some stored data
-  if (window.localStorage && localStorage.original) {
-    document.getElementById("original").value = localStorage.original;
-  }
-};
 
