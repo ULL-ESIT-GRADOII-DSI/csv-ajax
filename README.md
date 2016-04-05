@@ -1,21 +1,27 @@
-# Práctica 2: [Comma separated values (CSV)](http://alu0100764666.github.io/PL_practica2/)
+# Práctica 2: Comma separated values (CSV)
 
-- Analizador de cadenas csv. Introduzca una cadena en formato csv y pulse el botón para generar una tabla con los valores de la cadena csv. 
-- Con el botón test se irá a los test del analizador.
-- En la rama gh-pages encontrará una versión sin AJAX
-- En la rama master encontrará una versión utilizando AJAX.
+## jQuery.get( url [, data ] [, success ] [, dataType ] )
+* url
+  * Type: String
+  * A string containing the URL to which the request is sent.
+* data
+  * Type: PlainObject or String
+  * A plain object or string that is sent to the server with the request.
+* success
+  * Type: Function( PlainObject data, String textStatus, jqXHR jqXHR )
+  * A callback function that is executed if the request succeeds. 
+    Required if `dataType` is provided, but you can use `null` or `jQuery.noop` as a placeholder.
+* dataType
+  * Type: String
+  * The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).
 
-# Travis --> [enlace](https://travis-ci.org/alu0100764666/PL_practica2)
-[![Build Status](https://travis-ci.org/alu0100764666/PL_practica2.svg)](https://travis-ci.org/alu0100764666/PL_practica2)
+## jQuery.get( [settings ] )
+* settings
+  * Type: PlainObject
+  * A set of key/value pairs that configure the Ajax request. 
+  * All properties except for `url` are optional. 
+  * A default can be set for any option with `$.ajaxSetup()`.
 
 # Heroku 
-https://analizador-csv.herokuapp.com/
+https://cvsajax.herokuapp.com/
 
-# Participantes 
-- Sabato Ceruso
-	- [Enlace a la pagina personal](http://alu0100764666.github.io)
-	- [Enlace al repositorio github](https://github.com/alu0100764666) donde almacena sus practicas y trabajos de la carrera de Ingeniaría Informática.
-
-- Kevin Miguel Rivero Martin
-	- [Enlace a la pagina personal](http://kevinrm.github.io)
-	- [Enlace al repositorio github](https://github.com/KevinRM) donde almacena sus practicas y trabajos de la carrera de Ingeniaría Informática. 
