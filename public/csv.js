@@ -8,12 +8,12 @@ $(document).ready(function () {
     }
     var templateURL = document.getElementById("tableTemplate").src; // "http://.../tabletemplate.html"
     var template;
-    $.get(templateURL, template, function (t) {
+    $.get(templateURL, function (t) {
         template = t;
     });
     $("#tableButton").click(function () {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
-        $.get("/separateCSV", 
+        $.get("/csv", 
           { input: document.getElementById("original").value }, 
           function (data) {           
             $("#finaltable").html(_.template(template, { rows: data.rows }));

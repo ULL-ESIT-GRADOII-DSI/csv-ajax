@@ -17,7 +17,7 @@ app.get('/', function (request, response) {
   response.render('index', { title: 'CSV Analyzer' });
 });
 
-app.get('/separateCSV', function (request, response) {
+app.get('/csv', function (request, response) {
   response.send({ "rows": calculate(request.query.input) });
 });
 
