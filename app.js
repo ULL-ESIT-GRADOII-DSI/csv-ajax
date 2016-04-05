@@ -11,17 +11,14 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (request, response) {     
-    response.render('index', { title: 'CSV Analyzer' });
-});
-
 var calculate = require('calculate');
 
+app.get('/', function (request, response) {     
+  response.render('index', { title: 'CSV Analyzer' });
+});
+
 app.get('/separateCSV', function (request, response) {
-    var original = request.query.input
-    var rows = calculate(original);
-    
-    response.send({ "rows": rows });
+  response.send({ "rows": calculate(request.query.input) });
 });
 
 app.listen(app.get('port'), function () {

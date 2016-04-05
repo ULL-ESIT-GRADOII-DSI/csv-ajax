@@ -4,11 +4,10 @@ var calculate = function(original) {
     var commonLength = lines[0].match(regexp).length;
     var r = [];
     var removeQuotes = function(field) {
-      var removecomma = field.replace(/,\s*$/, '');
-      var remove1stquote = removecomma.replace(/^\s*"/, '');
-      var removelastquote = remove1stquote.replace(/"\s*$/, '');
-      var removeescapedquotes = removelastquote.replace(/\\"/, '"');
-      return removeescapedquotes;
+      return field.replace(/,\s*$/, '').
+                   replace(/^\s*"/, '').
+                   replace(/"\s*$/, '').
+                   replace(/\\"/, '"');
     };
 
     for (var t in lines) {
