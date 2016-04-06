@@ -28,7 +28,7 @@
     "express-ejs-layouts": "~1.1.0"
   },
   "engines": {
-    "node": "4.x"
+    "node": "5.x"
   },
   "devDependencies": {
     "chai": "*",
