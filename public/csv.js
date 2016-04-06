@@ -16,18 +16,32 @@ const template = `
   </p>
 `;
 
+const fillTable = (data) => { 
+  $("#finaltable").html(_.template(template, { rows: data.rows })); 
+};
+
+const dump = (fileName) => {
+  $.get(fileName, function (data) {
+      $("#original").val(data);
+  });
+};
+ 
 $(document).ready(() => {
+    let original = document.getElementById("original");  
     if (window.localStorage && localStorage.original) {
-      document.getElementById("original").value = localStorage.original;
+      original.value = localStorage.original;
     }
-    $("#tableButton").click( () => {
-        if (window.localStorage) localStorage.original = document.getElementById("original").value;
+    $("#parse").click( () => {
+        if (window.localStorage) localStorage.original = original.value;
         $.get("/csv", 
-          { input: document.getElementById("original").value }, 
-            (data) => {
-            $("#finaltable").html(_.template(template, { rows: data.rows }));
-         }, 
-         'json');
+          { input: original.value }, 
+          fillTable,
+          'json'
+        );
+   });
+   /* botones para rellenar el textarea */
+   $('button.example').each( (_,y) => {
+     $(y).click( () => { dump(`${$(y).text()}.txt`); });
    });
  });
 })();

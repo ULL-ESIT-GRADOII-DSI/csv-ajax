@@ -88,3 +88,6 @@ table.center {
 .error td{ 
 	background-color: #B40404; 
 }
+
+div.example { display: inline; }
+
