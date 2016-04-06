@@ -20,12 +20,6 @@ $(document).ready(() => {
     if (window.localStorage && localStorage.original) {
       document.getElementById("original").value = localStorage.original;
     }
-/*
-    var templateURL = document.getElementById("tableTemplate").src; // "http://.../tabletemplate.html"
-    $.get(templateURL, function (t) {
-        template = t;
-    });
-*/
     $("#tableButton").click( () => {
         if (window.localStorage) localStorage.original = document.getElementById("original").value;
         $.get("/csv", 
