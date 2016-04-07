@@ -26,6 +26,39 @@ const dump = (fileName) => {
   });
 };
  
+const usageList = `
+      <ul>
+        <% _.each(files, function(f) { %>
+          <li>
+              <strong><%- f.name %></strong> 
+              (<%= f.type || 'n/a' %>) 
+              - <%= f.size %> bytes,
+              last modified: 
+                <%= f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a' %>
+          </li>
+          <% }); %>
+      </ul>
+      `;
+
+      function handleFileSelect(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        var files = evt.dataTransfer.files; // FileList object.
+
+        // files is a FileList of File objects. List some properties.
+        var template = _.template(usageList);
+        document.getElementById('list').innerHTML = template({ files : files});
+        evt.target.style.background = "black";
+      }
+
+      function handleDragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.target.style.background = "purple";
+      }
+
+
 $(document).ready(() => {
     let original = document.getElementById("original");  
     if (window.localStorage && localStorage.original) {
@@ -43,5 +76,10 @@ $(document).ready(() => {
    $('button.example').each( (_,y) => {
      $(y).click( () => { dump(`${$(y).text()}.txt`); });
    });
+
+      // Setup the drag and drop listeners.
+      var dropZone = document.getElementById('drop_zone');
+      dropZone.addEventListener('dragover', handleDragOver, false);
+      dropZone.addEventListener('drop', handleFileSelect, false);
  });
 })();

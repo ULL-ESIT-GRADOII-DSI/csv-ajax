@@ -1,3 +1,12 @@
+    <style type="text/css">
+      #drop_zone{
+        width:50%;
+        background-color: black;
+        color: white;
+        padding: 3% 10%;
+        text-align: center;
+      }
+    </style>
   <div class="contenido_total">
     <div class="titulo_practica">
       <h1 align="center">
@@ -7,8 +16,8 @@
     </div>
     <div class="contenido">
       <table>
+        <tr><th>Cadena CSV</th></tr>
         <tr>
-          <th>Cadena CSV:</th>
           <td>
             <textarea autofocus="" cols = "40" rows = "5" id="original"></textarea>
           </td>
@@ -22,6 +31,15 @@
         <button type="button" id="parse">Tabla</button>
         <br>
       </div>
+
+      <p>
+        <b>
+          Zona de arrastre:
+        </b>
+      </p>
+      <div id="drop_zone">Drop files here</div>
+      <output id="list"></output>
+
       <div class="texto_resultado">
         <p>
           <b>
@@ -31,4 +49,7 @@
       </div>
       <span class="output" id="finaltable"></span>
     </div>
+
+
+
   </div>
