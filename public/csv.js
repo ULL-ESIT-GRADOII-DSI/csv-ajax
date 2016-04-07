@@ -47,10 +47,16 @@ const usageList = `
         var files = evt.dataTransfer.files; // FileList object.
 
         // files is a FileList of File objects. List some properties.
-        var template = _.template(usageList);
-        //document.getElementById('list').innerHTML = template({ files : files});
-        $("#original").val(template({ files: files}));
-        evt.target.style.background = "white";
+        // var template = _.template(usageList);
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        
+          //document.getElementById('list').innerHTML = template({ files : files});
+          //$("#original").val(template({ files: files}));
+          $("#original").val(e.target.result);
+          evt.target.style.background = "white";
+        };
+        reader.readAsText(files[0])
       }
 
       function handleDragOver(evt) {

@@ -91,3 +91,12 @@ table.center {
 
 div.example { display: inline; }
 
+/* drag and drop */   
+#drop_zone{
+  width:50%;
+  background-color: white;
+  color: black;
+  padding: 3% 10%;
+  text-align: center;
+}
+
