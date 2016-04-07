@@ -9,6 +9,7 @@ body{
   
   background-attachment:fixed;
   background-repeat:repeat;
+  text-align: center;
 
   }
 
@@ -65,12 +66,8 @@ body{
   text-align:justify;
   color:white;
 }
-.boton_tabla{
-  text-align: left;
-  margin-top:20px;
-  margin-bottom:30px;
-}
-table.center {
+
+ table.center {
 	font-weight: bold;
 	color:white;
 	text-align: center;

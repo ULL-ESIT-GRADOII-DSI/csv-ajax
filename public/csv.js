@@ -3,7 +3,7 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 const template = `
-  <p>
+<div class="contenido">
       <table class="center" id="result">
           <% _.each(rows, (row) => { %>
           <tr class="<%=row.type%>">
@@ -14,6 +14,7 @@ const template = `
           <% }); %>
       </table>
   </p>
+</div>
 `;
 
 const fillTable = (data) => { 
