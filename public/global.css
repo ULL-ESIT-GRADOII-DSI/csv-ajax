@@ -92,7 +92,7 @@ table.center {
 div.example { display: inline; }
 
 /* drag and drop */   
-#drop_zone{
+.drop_zone{
   width:50%;
   background-color: white;
   color: black;

@@ -85,7 +85,7 @@ $(document).ready(() => {
    });
 
       // Setup the drag and drop listeners.
-      var dropZone = document.getElementById('drop_zone');
+      var dropZone = document.getElementsByClassName('drop_zone')[0];
       dropZone.addEventListener('dragover', handleDragOver, false);
       dropZone.addEventListener('drop', handleFileSelect, false);
  });
