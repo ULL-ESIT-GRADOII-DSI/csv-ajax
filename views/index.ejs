@@ -1,8 +1,8 @@
     <style type="text/css">
       #drop_zone{
         width:50%;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         padding: 3% 10%;
         text-align: center;
       }
@@ -16,9 +16,9 @@
     </div>
     <div class="contenido">
       <table>
-        <tr><th>Cadena CSV</th></tr>
+        <tr><th>Deje aquí su entrada en CSV</th></tr>
         <tr>
-          <td>
+          <td id="drop_zone">
             <textarea autofocus="" cols = "40" rows = "5" id="original"></textarea>
           </td>
         </tr>
@@ -37,7 +37,6 @@
           Zona de arrastre:
         </b>
       </p>
-      <div id="drop_zone">Drop files here</div>
       <output id="list"></output>
 
       <div class="texto_resultado">

@@ -48,14 +48,15 @@ const usageList = `
 
         // files is a FileList of File objects. List some properties.
         var template = _.template(usageList);
-        document.getElementById('list').innerHTML = template({ files : files});
-        evt.target.style.background = "black";
+        //document.getElementById('list').innerHTML = template({ files : files});
+        $("#original").val(template({ files: files}));
+        evt.target.style.background = "white";
       }
 
       function handleDragOver(evt) {
         evt.stopPropagation();
         evt.preventDefault();
-        evt.target.style.background = "purple";
+        evt.target.style.background = "yellow";
       }
 
 
