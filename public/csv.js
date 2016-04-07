@@ -27,45 +27,26 @@ const dump = (fileName) => {
   });
 };
  
-const usageList = `
-      <ul>
-        <% _.each(files, function(f) { %>
-          <li>
-              <strong><%- f.name %></strong> 
-              (<%= f.type || 'n/a' %>) 
-              - <%= f.size %> bytes,
-              last modified: 
-                <%= f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a' %>
-          </li>
-          <% }); %>
-      </ul>
-      `;
+const handleFileSelect = (evt) => {
+  evt.stopPropagation();
+  evt.preventDefault();
 
-      function handleFileSelect(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
+  var files = evt.dataTransfer.files; // FileList object.
 
-        var files = evt.dataTransfer.files; // FileList object.
+  var reader = new FileReader();
+  reader.onload = (e) => {
+  
+    $("#original").val(e.target.result);
+    evt.target.style.background = "white";
+  };
+  reader.readAsText(files[0])
+}
 
-        // files is a FileList of File objects. List some properties.
-        // var template = _.template(usageList);
-        var reader = new FileReader();
-        reader.onload = function(e) {
-        
-          //document.getElementById('list').innerHTML = template({ files : files});
-          //$("#original").val(template({ files: files}));
-          $("#original").val(e.target.result);
-          evt.target.style.background = "white";
-        };
-        reader.readAsText(files[0])
-      }
-
-      function handleDragOver(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        evt.target.style.background = "yellow";
-      }
-
+const handleDragOver = (evt) => {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.target.style.background = "yellow";
+}
 
 $(document).ready(() => {
     let original = document.getElementById("original");  
@@ -85,9 +66,10 @@ $(document).ready(() => {
      $(y).click( () => { dump(`${$(y).text()}.txt`); });
    });
 
-      // Setup the drag and drop listeners.
-      var dropZone = document.getElementsByClassName('drop_zone')[0];
-      dropZone.addEventListener('dragover', handleDragOver, false);
-      dropZone.addEventListener('drop', handleFileSelect, false);
+    // Setup the drag and drop listeners.
+    //var dropZone = document.getElementsByClassName('drop_zone')[0];
+    var dropZone = $('.drop_zone')[0];
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('drop', handleFileSelect, false);
  });
 })();
