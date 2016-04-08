@@ -2,7 +2,7 @@
 (() => {
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
-const template = `
+const resultTemplate = `
 <div class="contenido">
       <table class="center" id="result">
           <% _.each(rows, (row) => { %>
@@ -17,16 +17,20 @@ const template = `
 </div>
 `;
 
+/* Volcar la tabla con el resultado en el HTML */
 const fillTable = (data) => { 
-  $("#finaltable").html(_.template(template, { rows: data.rows })); 
+  $("#finaltable").html(_.template(resultTemplate, { rows: data.rows })); 
 };
 
+/* Volcar en la textarea de entrada 
+ * #original el contenido del fichero fileName */
 const dump = (fileName) => {
   $.get(fileName, function (data) {
       $("#original").val(data);
   });
 };
  
+/* Drag and drop: el fichero arrastrado se vuelca en la txtarea de entrada */
 const handleFileSelect = (evt) => {
   evt.stopPropagation();
   evt.preventDefault();
@@ -55,7 +59,7 @@ $(document).ready(() => {
     }
     $("#parse").click( () => {
         if (window.localStorage) localStorage.original = original.value;
-        $.get("/csv", 
+        $.get("/csv", /* Request AJAX para que se calcule la tabla */
           { input: original.value }, 
           fillTable,
           'json'
