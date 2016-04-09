@@ -1,99 +1,16 @@
-body{
-
-  margin-left:10%;
-  margin-right:10%;
-  margin-top:30px;
-  margin-bottom:20px;
-
-  //background-image:url(./imagenes/fondo-de-madera-2831.jpg);
-  
-  background-attachment:fixed;
-  background-repeat:repeat;
-  text-align: center;
-
-  }
-
-.menu dl{
-  float:left;
-  margin-top:40;
-
-  width:185;
-  height:auto;
-  padding:5px;
-  overflow:auto;
-  line-height:20px;
-
-  border-color:black;
-  border-style:solid;
-  background:#424242;
-
-
-  font-family:Airal;
-  font-size:14;
-  font-weight:bold;
-
-}
-.contenido_total{
-  margin-left:220;
-}
-.contenido{
-  margin-top:20px;
-}
-.enlaces{
-  margin-top: 30px;
-  float:right;
-}
-.enlace_tests{
-  display: inline-block;
-}
-.enlace_travis{
-  display: inline-block;
-}
-.enlace_github{
-  display:inline-block;
-}
-.enlace_jquery{
-  display:inline-block;
-}
-.descripcion fieldset{
-  border-color:black; 
-  margin-top:50px;
-  width:250px;
-}
-.descripcion p{
-  display: inline-block;
-  float: left;
-  text-align:justify;
-  color:white;
-}
-
- table.center {
+table.center {
 	font-weight: bold;
-	color:white;
+	color: black;
 	text-align: center;
 
 	margin-left: 90px;
+	margin-top: 10px;
 	
 	border: ridge;
-	border-color: #0B610B;
+	border-color: blue;
 	
-	background-color: #A4A4A4;	
+	background-color: white;	
 }
-.center td{
-	background-color: #424242;
-}
-.error td{ 
-	background-color: #B40404; 
-}
-
-div.example { display: inline; }
-
-/* drag and drop */   
-.drop_zone{
-  width:50%;
-  background-color: white;
-  color: black;
-  padding: 3% 10%;
-  text-align: center;
-}
-
+.output tr:nth-child(odd)    { background-color:#eee; }
+.output tr:nth-child(even)   { background-color:#00FF66; }
+.error td{ background-color: red; }
