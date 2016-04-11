@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 
-const regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g
+const regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g;
 const calculate = (original) => {
     let lines = original.split(/\n+\s*/);
     let commonLength = lines[0].match(regexp).length;
