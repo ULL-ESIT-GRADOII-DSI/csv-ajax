@@ -1,6 +1,12 @@
-# Práctica 2: Comma separated values (CSV) with AJAX
+# Práctica: Comma separated values (CSV) with AJAX
 
-## jQuery.get( url [, data ] [, success ] [, dataType ] )
+## Descripción de la Práctica
+
+Véase [CSV usando Ajax en gitbook](https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/practicaajaxcsv.html)
+
+## jQuery AJAX
+
+### jQuery.get( url [, data ] [, success ] [, dataType ] )
 * url
   * Type: String
   * A string containing the URL to which the request is sent.
@@ -15,7 +21,7 @@
   * Type: String
   * The type of data expected from the server. Default: Intelligent Guess (xml, json, script, text, html).
 
-## jQuery.get( [settings ] )
+### jQuery.get( [settings ] )
 * settings
   * Type: PlainObject
   * A set of key/value pairs that configure the Ajax request. 
@@ -35,6 +41,7 @@ $.ajax({
 
 The success callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response.
 
-# Heroku 
-https://cvsajax.herokuapp.com/
+## Heroku 
+
+ [Despliegue en Heroku](https://cvsajax.herokuapp.com/)
 
